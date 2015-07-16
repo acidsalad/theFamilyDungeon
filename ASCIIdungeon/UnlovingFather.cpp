@@ -4,6 +4,7 @@
 UnlovingFather::UnlovingFather()
 {
 	_avatar = 'F';
+	_name = "Unloving Father";
 }
 
 
@@ -11,7 +12,3 @@ UnlovingFather::~UnlovingFather()
 {
 }
 
-void UnlovingFather::saySomething(DialogueTree* dialogueTree)
-{
-
-}

@@ -37,6 +37,7 @@ char Enemy::getMove(int playerX, int playerY)
 {
 	static default_random_engine randomEngine(time(NULL));
 	uniform_int_distribution<int> moveRoll(0, 6);
+	uniform_int_distribution<int> vRoll(1, 4);
 
 	float distance;
 	int dx = _x - playerX;
@@ -47,7 +48,7 @@ char Enemy::getMove(int playerX, int playerY)
 	switch (_avatar)
 	{
 	case 'v':
-		if (distance <= _attackDistance && distance >= 4){
+		if (distance <= _attackDistance && distance > 5){
 			//should the enemy move left/right?
 			if (adx > ady) {
 				if (dx < 0) {
@@ -63,6 +64,35 @@ char Enemy::getMove(int playerX, int playerY)
 				}
 				else {
 					return 's';
+				}
+			}
+		}
+		else if (distance < 4) {
+			if (adx > ady) {
+				if (dy < 0)
+					return 's';
+				else if (dy >= 0)
+					return 'w';
+
+
+			}
+			else if (adx < ady) {
+				if (dx < 0) {
+					return 'd';
+				}
+				else if (dx >= 0){
+					return 'a';
+				}
+
+			}
+			else
+			{
+				int chooser = vRoll(randomEngine);
+				switch (chooser) {
+				case 1: return 'a';
+				case 2: return 's';
+				case 3: return 'd';
+				case 4: return 'w';
 				}
 			}
 		}

@@ -23,6 +23,5 @@ public:
 private:
 	Level _level;
 	Player* _player = new Player;
-	DialogueTree* _dialogueTree = new DialogueTree;
 };
 

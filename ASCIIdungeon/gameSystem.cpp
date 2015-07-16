@@ -5,11 +5,11 @@
 
 gameSystem::gameSystem()
 {
-	_dialogueTree->init();
+	_player->getTree()->init();
 	_player->init(20, 5, 1, 0, 4, 50);
 
-	
-	_level.load("level0.txt", _player);
+	_level.saySomething(_player->getTree(), 0);
+	_level.load("level2.txt", _player);
 }
 
 
@@ -23,7 +23,6 @@ void gameSystem::playGame()
 		playerMove();
 	}
 
-	delete _dialogueTree;
 	delete _player;
 }
 

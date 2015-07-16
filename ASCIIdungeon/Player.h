@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "DialogueTree.h"
 #include <list>
 
 class Player : public Entity {
@@ -17,6 +18,7 @@ public:
 	int getLevel() { return _level; }
 	int getExp() { return _exp; }
 	int get_tNL() { return _toNextLevel; }
+	DialogueTree* getTree() { return _dialogueTree; }
 
 protected:
 	int _money;
@@ -24,5 +26,7 @@ protected:
 	int _exp;
 	list<string> _inventory;
 	int _toNextLevel;
+
+	DialogueTree* _dialogueTree = new DialogueTree;
 };
 

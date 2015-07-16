@@ -29,17 +29,15 @@ void DialogueTree::loadTree() {
 		perror("dialogue.txt");
 		system("PAUSE");
 	}
-
-	ifstream loadOptions;
-	loadOptions.open("options.txt");
-	if (loadOptions.fail()) {
-		perror("options.txt");
-		system("PAUSE");
-	}
-
 	string line;
 	while (getline(loadDialogue, line))
 	{
+		ifstream loadOptions;
+		loadOptions.open("options.txt");
+		if (loadOptions.fail()) {
+			perror("options.txt");
+			system("PAUSE");
+		}
 		DialogueNode* node = new DialogueNode;
 		node->text = line;
 		while (getline(loadOptions, line)) {
@@ -49,10 +47,11 @@ void DialogueTree::loadTree() {
 			//delete option;
 		}
 		_nodes.push_back(node);
+		loadOptions.close();
 	}
 
 	loadDialogue.close();
-	loadOptions.close();
+	
 
 	/*
 	//print the NODES for testing purposes
@@ -65,7 +64,6 @@ void DialogueTree::loadTree() {
 		{
 			printf("%s\n", _nodes[i]->_dialogueOptions[j]->text.c_str());
 		}
-
 	}
 	*/
 }

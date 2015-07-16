@@ -7,9 +7,7 @@ public:
 	UnlovingFather();
 	~UnlovingFather();
 
-	void saySomething(DialogueTree* dialogueTree);
 
 private:
 	DialogueTree* _dialogueTree = new DialogueTree;
 };
-

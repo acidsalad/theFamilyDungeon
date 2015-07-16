@@ -209,8 +209,10 @@ void Level::processPlayerMove(Player* &player, int targetX, int targetY)
 		break; 
 	case 'F':
 		for (int i = 0; i < _NPCs.size(); i++) {
-			char avatar = getAvatar();
-			if (_NPCs[i]._avatar = 'F')
+			char avatar = _NPCs[i].getAvatar();
+			if (avatar == 'F') {
+
+			}
 		}
 		break;
 	case 'D': 
@@ -404,12 +406,18 @@ void Level::processNPCMove(Player* &player, int NPCIndex, int targetX, int targe
 	}
 }
 
+void Level::saySomething(DialogueTree* dialogueTreeptr, int _levelNumber)
+{
+	printf("%s\n", dialogueTreeptr->get_nodes()[_levelNumber]->text.c_str());
+}
+
+
 
 
 void Level::newLevel(Player* &player)
-{
-	_levelNumber++;
-	_levelData.clear();
+{	_levelNumber++;
+	_levelData.clear();	
 	_levelDataCutScene.clear();
+	saySomething(player->getTree(), _levelNumber);
 	load(_levels[_levelNumber], player);
 }

@@ -31,6 +31,9 @@ public:
 
 	int performDialogue();
 
+	//getters
+	vector<DialogueNode*> get_nodes() { return _nodes; }
+
 private:
 	vector<DialogueNode*> _nodes;
 };

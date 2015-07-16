@@ -20,6 +20,11 @@ public:
 	void updateEnemies(Player* &player);
 	void updateNPCs(Player* &player);
 
+	void vRepel(Player* player);
+
+	//finds the dialogue to output
+	void saySomething(DialogueTree* dialogueTree, int _levelNumber);
+
 	//calls new level to print
 	void newLevel(Player* &player);
 
