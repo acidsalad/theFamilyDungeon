@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # theFamily
 A newbie's C++ game, in which the player has a really, REALLY bad relationship with his/her family.
 
@@ -17,3 +18,15 @@ All enemyies inherit from the Enemy class  (enemy.h).
 
 # FEEL FREE TO ADD WHATEVER YOU LIKE. ONLY DELETE CODE IF YOU MUST. IF YOU'D LIKE ME TO DELETE SOME PROBLEMATIC CODE,
 # LET ME KNOW, AND I WILL REVIEW THE CODE.
+=======
+# theFamilyDungeon
+
+This is the bastard code for the scrapped theFamily code. It just so happens that theFamily had FIVE MILLION shitty bugs.
+
+But that's okay, because today, we start a dungeon exploration. In its 
+#primitive state.
+
+No bugs as of yet. So fuck you guys.
+
+Also, contribute if you can!
+>>>>>>> 93aa3cb664efb1ced1f26eca2e17d6ec6e7e1281
