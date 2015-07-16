@@ -4,7 +4,7 @@ class NPC :
 	public Entity
 {
 public:
-	NPC(char avatar);
+	NPC();
 	~NPC();
 
 	//Gets AI move command

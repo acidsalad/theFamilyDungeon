@@ -4,7 +4,7 @@
 #include <fstream>
 #include "Player.h"
 #include "Enemy.h"
-#include "NPC.h"
+#include "UnlovingFather.h"
 using namespace std;
 
 class Level
@@ -18,6 +18,7 @@ public:
 
 	void movePlayer(char input, Player* &player);
 	void updateEnemies(Player* &player);
+	void updateNPCs(Player* &player);
 
 	//calls new level to print
 	void newLevel(Player* &player);
@@ -39,6 +40,7 @@ private:
 
 	void processPlayerMove(Player* &player, int targetX, int targetY);
 	void processEnemyMove(Player* &player, int enemyIndex, int targetX, int targetY);
+	void processNPCMove(Player* &player, int NPCIndex, int targetX, int targetY);
 	void battleMonster(Player* &player, int targetX, int targetY);
 
 };

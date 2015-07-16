@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClCompile Include="DangerousPussy.cpp" />
     <ClCompile Include="DangerousVagina.cpp" />
+    <ClCompile Include="DialogueTree.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Exclamation.cpp" />
@@ -88,11 +89,13 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="UnlovingFather.cpp" />
     <ClCompile Include="YouAreHere.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DangerousPussy.h" />
     <ClInclude Include="DangerousVagina.h" />
+    <ClInclude Include="DialogueTree.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Exclamation.h" />
@@ -100,6 +103,7 @@
     <ClInclude Include="Level.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="UnlovingFather.h" />
     <ClInclude Include="YouAreHere.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

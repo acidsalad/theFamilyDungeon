@@ -15,6 +15,7 @@ public:
 	void setPosition(int x, int y);
 
 	//getter
+	char getAvatar() { return _avatar; }
 	void getPosition(int &x, int &y);
 	int get_hp(){ return _hp; }
 	int get_pp(){ return _pp; }

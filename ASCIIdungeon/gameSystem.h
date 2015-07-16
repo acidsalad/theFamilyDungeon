@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Level.h"
 #include "Enemy.h"
+#include "DialogueTree.h"
 #include <string>
 
 using namespace std;
@@ -22,5 +23,6 @@ public:
 private:
 	Level _level;
 	Player* _player = new Player;
+	DialogueTree* _dialogueTree = new DialogueTree;
 };
 

@@ -5,10 +5,11 @@
 
 gameSystem::gameSystem()
 {
+	_dialogueTree->init();
 	_player->init(20, 5, 1, 0, 4, 50);
 
 	
-	_level.load("level2.txt", _player);
+	_level.load("level0.txt", _player);
 }
 
 
@@ -21,6 +22,9 @@ void gameSystem::playGame()
 		_level.print(_player);
 		playerMove();
 	}
+
+	delete _dialogueTree;
+	delete _player;
 }
 
 void gameSystem::playerMove() {
@@ -33,6 +37,7 @@ void gameSystem::playerMove() {
 	
 	_level.movePlayer(input, _player);
 	_level.updateEnemies(_player);
+	_level.updateNPCs(_player);
 	}
 
 

@@ -16,5 +16,4 @@
         D                                                                 D
         #                                                                 #
         #                                                                 #
-        vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         ###################################################################

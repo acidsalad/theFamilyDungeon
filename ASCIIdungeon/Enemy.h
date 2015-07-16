@@ -8,8 +8,6 @@ public:
 
 	int takeDamage(int attack);
 
-	//Getters
-	char getAvatar() { return _avatar; }
 	//Gets AI move command
 	char getMove(int playerX, int playerY);
 

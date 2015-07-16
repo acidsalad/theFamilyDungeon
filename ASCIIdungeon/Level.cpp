@@ -66,7 +66,7 @@ void Level::load(string fileName, Player* &player) {
 				case 'T':
 					break;
 				case 'F':
-					_NPCs.push_back(NPC('F'));
+					_NPCs.push_back(UnlovingFather());
 					_NPCs.back().setPosition(j, i);
 					break;
 				case '!': //Exclamation Enemy!
@@ -102,7 +102,7 @@ void Level::load(string fileName, Player* &player) {
 				case 'T':
 					break;
 				case 'F':
-					_NPCs.push_back(NPC('F'));
+					_NPCs.push_back(UnlovingFather());
 					_NPCs.back().setPosition(j, i);
 					break;
 				case '!': //Exclamation Enemy!
@@ -205,8 +205,13 @@ void Level::processPlayerMove(Player* &player, int targetX, int targetY)
 		setTile(playerX, playerY, ' ');
 		setTile(targetX, targetY, '@');
 		break;
-		break;
 	case 'T':
+		break; 
+	case 'F':
+		for (int i = 0; i < _NPCs.size(); i++) {
+			char avatar = getAvatar();
+			if (_NPCs[i]._avatar = 'F')
+		}
 		break;
 	case 'D': 
 		newLevel(player);
@@ -348,6 +353,57 @@ void Level::updateEnemies(Player* &player) {
 		}
 	}
 }
+
+void Level::updateNPCs(Player* &player) {
+	char aimove;
+	int NPCX, NPCY;
+	int playerX, playerY;
+	player->getPosition(playerX, playerY);
+
+
+	for (int i = 0; i < _NPCs.size(); i++) {
+		aimove = _NPCs[i].getMove(playerX, playerY);
+		_NPCs[i].getPosition(NPCX, NPCY);
+		switch (aimove) {
+		case 'w':
+			processNPCMove(player, i, NPCX, NPCY + 1);
+			break;
+		case 's':
+			processNPCMove(player, i, NPCX, NPCY - 1);
+			break;
+		case 'a':
+			processNPCMove(player, i, NPCX + 1, NPCY);
+			break;
+		case 'd':
+			processNPCMove(player, i, NPCX - 1, NPCY);
+			break;
+		}
+	}
+}
+
+void Level::processNPCMove(Player* &player, int NPCIndex, int targetX, int targetY) {
+	int playerX, playerY;
+	player->getPosition(playerX, playerY);
+	int NPCX, NPCY;
+	_NPCs[NPCIndex].getPosition(NPCX, NPCY);
+
+	char moveTile = getTile(targetX, targetY);
+
+	switch (moveTile)
+	{
+	case '.': _NPCs[NPCIndex].setPosition(targetX, targetY);
+		setTile(NPCX, NPCY, '.');
+		setTile(targetX, targetY, _NPCs[NPCIndex].getAvatar());
+		break;
+	case ' ': _NPCs[NPCIndex].setPosition(targetX, targetY);
+		setTile(NPCX, NPCY, ' ');
+		setTile(targetX, targetY, _NPCs[NPCIndex].getAvatar());
+		break;
+	default:
+		break;
+	}
+}
+
 
 
 void Level::newLevel(Player* &player)

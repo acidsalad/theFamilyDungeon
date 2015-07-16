@@ -4,7 +4,7 @@
 YouAreHere::YouAreHere()
 {
 	_avatar = 'v';
-	_attackDistance = 15;
+	_attackDistance = 8;
 }
 
 
